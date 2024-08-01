@@ -1,4 +1,4 @@
-export var arrOfObj = [{ //What if i used a "var arrOfObj = ..." instead of " export const users = ..."
+export const arrOfObj = [{ //What if i used a "var arrOfObj = ..." instead of " export const users = ..."
     id: 1,
     name: 'Alice',
     userName: '0001',
