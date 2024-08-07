@@ -1,16 +1,30 @@
 import React, { Component } from "react"; //Question: How can react be a component? Isnt it an indepedent app itself?
 import SearchBox from './SearchBox';
 import CardList from "./CardList";
+import { arrOfObj } from "./User";
 
 class App extends Component {
 
-    render() {
-        return (
-            <div className="tcc">
-                <h1 className="fra">First React App</h1>
-                <SearchBox searchChange = {this.onSearchTrigger}/>
-                <CardList users={filterUsers} 
-            </div>
-        );
+    constructor() {
+        super();
+        this.state = {
+            users : arrOfObj,
+            searchField: ''
+        }
     }
+
+    render() {
+		const filterUsers = this.state.users.filter(users =>{
+		return users.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+		})
+		return (
+			<div className ='tc'>
+				<h1 className="f1"> First React App </h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<CardList users={filterUsers} />
+			</div>
+		);
+	}
+	
 }
+export default App;
