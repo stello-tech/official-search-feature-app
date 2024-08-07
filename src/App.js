@@ -13,6 +13,11 @@ class App extends Component {
         }
     }
 
+    onSearchChange = (event) =>{
+        this.setState({searchField: event.target.value});
+        console.log(event.target.value);
+    }
+
     render() {
 		const filterUsers = this.state.users.filter(users =>{
 		return users.name.toLowerCase().includes(this.state.searchField.toLowerCase());

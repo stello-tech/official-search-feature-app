@@ -7,10 +7,10 @@ import 'tachyons';
 import {arrOfObj} from './User';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')); /* App is a component, first thing to render */
 root.render(
   <React.StrictMode>
-  <App/> /* App is a component, first thing to render */
+  <App/>
   </React.StrictMode>
 );
 
