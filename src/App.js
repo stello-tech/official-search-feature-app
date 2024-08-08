@@ -41,4 +41,7 @@ export default App;
 // The value being the user's input.
 
 // In the rendering function, we are creating another variable filterUsers which recieves the users in line
-// #11 (arrOfObj from User.js) and since this.state.users is an array we are using the filter function.
+// #11 (arrOfObj from User.js) and since this.state.users is an array we are using the filter function. At 
+// the same time we are also converting user's input to lowercase and including any other searchField.
+
+// Note: Line# 26 tc is for tachyons.
