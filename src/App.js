@@ -11,7 +11,7 @@ class App extends Component {
             users : [],
             searchField: ''
         }
-        console.log("1. Constructor life cycle hook runs first.")
+        console.log("1. Constructor Method: Constructor life cycle hook runs first.")
     }
 
     onSearchChange = (event) =>{
@@ -20,9 +20,12 @@ class App extends Component {
     }
 
     render() {
-                const filterUsers = this.state.users.filter (users => {
-                return users.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+                const {users, searchField} = this.state;
+                console.log("3. Render Method: Constructor life cycle hook runs third.")
+                const filterUsers = users.filter (users => {
+                    return users.name.toLowerCase().includes(searchField.toLowerCase());
                 })
+
 		return (
 			<div className ='tc'>
 				<h1 className="f1"> First React App </h1>
