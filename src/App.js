@@ -1,16 +1,17 @@
 import React, { Component } from "react"; //Question: How can react be a component? Isnt it an indepedent app itself?
 import SearchBox from './SearchBox';
 import CardList from "./CardList";
-import { arrOfObj } from "./User";
+// import { arrOfObj } from "./User";
 
 class App extends Component {
 
     constructor() {
         super();
         this.state = {
-            users : arrOfObj,
+            users : [],
             searchField: ''
         }
+        console.log("1. Constructor life cycle hook runs first.")
     }
 
     onSearchChange = (event) =>{
