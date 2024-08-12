@@ -20,21 +20,26 @@ class App extends Component {
     }
 
     render() {
-                const {users, searchField} = this.state;
-                console.log("3. Render Method: Constructor life cycle hook runs third.")
-                const filterUsers = users.filter (users => {
-                    return users.name.toLowerCase().includes(searchField.toLowerCase());
-                })
+        const {users, searchField} = this.state;
+        console.log("3. Render Method: Constructor life cycle hook runs third.")
+        const filterUsers = users.filter (users => {
+            return users.name.toLowerCase().includes(searchField.toLowerCase());
+        })
 
-		return (
-			<div className ='tc'>
-				<h1 className="f1"> First React App </h1>
-				<SearchBox searchChange={this.onSearchChange}/> 
-				<CardList users={filterUsers} />
-			</div>
-		);
-	}
-	
+        if (users.length === 0){
+            return <h1>User not found, try again.</h1>
+        }
+        
+        else{
+            return (
+                <div className ='tc'>
+                    <h1 className="f1"> First React App </h1>
+                    <SearchBox searchChange={this.onSearchChange}/> 
+                    <CardList users={filterUsers} />
+                </div>
+            );
+        }     
+    }
 }
 export default App;
 
