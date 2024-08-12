@@ -2,6 +2,7 @@ import React, { Component } from "react"; //Question: How can react be a compone
 import SearchBox from './SearchBox';
 import CardList from "./CardList";
 // import { arrOfObj } from "./User";
+import Scroll from './Scroll';
 
 class App extends Component {
 
@@ -23,7 +24,7 @@ class App extends Component {
         })
     }
 
-    onSearchChange = (event) =>{
+    onSearchChange = (event) => {
         this.setState({searchField: event.target.value});
         console.log(event.target.value);
     }
@@ -44,7 +45,9 @@ class App extends Component {
                 <div className ='tc'>
                     <h1 className="f1"> First React App </h1>
                     <SearchBox searchChange={this.onSearchChange}/> 
-                    <CardList users={filterUsers} />
+                    <Scroll>
+                        <CardList users={filterUsers}/>
+                    </Scroll>
                 </div>
             );
         }     
@@ -52,14 +55,6 @@ class App extends Component {
 }
 export default App;
 
-// We're calling the searchBox component through line #28, in which we pass the property 
-// searchComponent. The searchChange property calls the function onSearchChange by {this.onSearchChange}.
-
-// The onSearchChange function is refering to line #16 which is giving value to the searchField in line #12.
-// The value being the user's input.
-
-// In the rendering function, we are creating another variable filterUsers which recieves the users in line
-// #11 (arrOfObj from User.js) and since this.state.users is an array we are using the filter function. At 
-// the same time we are also converting user's input to lowercase and including any other searchField.
-
-// Note: Line# 26 tc is for tachyons.
+// Line #48-50 is recieving property from Scroll.js because <Scroll> is not a self closing component
+// Therefore, we have a child component inside it, CardList component will be given to Scroll component
+// as 'props', which is accessed through props.children (also an array of 10 objects.)
