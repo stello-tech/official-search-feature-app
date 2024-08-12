@@ -14,6 +14,15 @@ class App extends Component {
         console.log("1. Constructor Method: Constructor life cycle hook runs first.")
     }
 
+    componentDidMount(){
+        console.log("4. componentDidMount Method: Constructor life cycle hook runs fourth.");
+        fetch('https://jsonplaceholder.typicode.com/users').then(Response => {
+            return Response.json();
+        }).then(users => {
+            this.setState({users:users});
+        })
+    }
+
     onSearchChange = (event) =>{
         this.setState({searchField: event.target.value});
         console.log(event.target.value);
