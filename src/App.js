@@ -38,16 +38,15 @@ class App extends Component {
         })
 
         if (users.length === 0){
-            return <h1>User not found, try again.</h1>
+            return <h1>Loading</h1>
         }
-        
         else{
             return (
                 <div className ='tc'>
                     <h1 className="f1"> First React App </h1>
                     <SearchBox searchChange={this.onSearchChange}/> 
                     <Scroll>
-                        <CardList users={filterUsers}/>
+                            <CardList users={filterUsers}/>
                     </Scroll>
                 </div>
             );
