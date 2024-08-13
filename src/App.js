@@ -3,6 +3,7 @@ import SearchBox from './SearchBox';
 import CardList from "./CardList";
 // import { arrOfObj } from "./User";
 import Scroll from './Scroll';
+import ErrorBoundry from './ErrorBoundary.js';
 
 class App extends Component {
 
